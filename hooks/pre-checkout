@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# This file is uploaded to the S3 secrets directory on Buildkite to ensure it
+# runs at the agent level prior to checkout.
+set -euo pipefail
+
+DEPTH=$BUILDKITE_PLUGIN_GIT_LFS_SKIP_SMUDGE_DEPTH
+
+export BUILDKITE_GIT_CLONE_FLAGS="-v --depth ${DEPTH}"
+export GIT_LFS_SKIP_SMUDGE="1"

@@ -1,0 +1,9 @@
+name: Git LFS Skip Smudge
+description: Allows checkouts of LFS repos to prevent full downloads
+author: https://github.com/robcole
+requirements: ['git']
+configuration:
+  properties:
+    depth:
+      type: number
+  additionalProperties: false

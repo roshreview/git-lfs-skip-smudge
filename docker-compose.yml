@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  lint:
+    image: buildkite/plugin-linter
+    command: ['--id', 'roshreview/git-lfs-skip-smudge']
+    volumes:
+      - ".:/plugin:ro"
